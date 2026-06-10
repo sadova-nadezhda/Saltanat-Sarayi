@@ -389,6 +389,10 @@
         spaceBetween: 16,
         observer: true,
         observeParents: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         breakpoints: {
           768: { spaceBetween: 24 },
           1025: { spaceBetween: 48 },
