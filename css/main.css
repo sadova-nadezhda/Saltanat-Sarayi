@@ -814,7 +814,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   --btn-outline-bg: transparent;
 
   display: flex;
-  min-height: calc(820 * var(--width-multiplier));
+  min-height: 100vh;
   background: var(--venue-bg);
   color: var(--venue-fg);
 }
@@ -895,7 +895,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
    the whole block (otherwise the title jumps up/down) */
 .venue__panel:has(.venue__acc){ align-items: flex-start; }
 .venue__content{
-  width: calc(520 * var(--width-multiplier));
+  max-width: calc(520 * var(--width-multiplier));
   display: flex;
   flex-direction: column;
   gap: calc(20 * var(--width-multiplier));
@@ -1052,7 +1052,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   z-index: 2;
   top: calc(240 * var(--width-multiplier));
   right: 0;
-  width: calc(195 * var(--width-multiplier));
+  max-width: calc(195 * var(--width-multiplier));
   padding: calc(32 * var(--width-multiplier));
   background: var(--badge-bg);
   display: flex;
