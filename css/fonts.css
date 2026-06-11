@@ -1,5 +1,5 @@
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Forum';
   font-style: normal;
   font-weight: 400;
@@ -9,7 +9,7 @@
 
 /* montserrat-300 - latin */
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 300;
@@ -18,7 +18,7 @@
 }
 /* montserrat-regular - latin */
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -27,7 +27,7 @@
 }
 /* montserrat-500 - latin */
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
@@ -36,7 +36,7 @@
 }
 /* montserrat-600 - latin */
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
@@ -45,7 +45,7 @@
 }
 /* montserrat-700 - latin */
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
@@ -54,7 +54,7 @@
 }
 /* montserrat-800 - latin */
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 800;
@@ -63,7 +63,7 @@
 }
 /* montserrat-900 - latin */
 @font-face {
-  font-display: swap;
+  font-display: fallback;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
