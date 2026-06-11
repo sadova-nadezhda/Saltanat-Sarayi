@@ -1627,3 +1627,40 @@ html:not(.no-js) [data-reveal-group].is-revealed > *{
   [data-reveal],
   [data-reveal-group] > *{ transition: none; }
 }
+
+/* =============================================
+   Preloader
+   ============================================= */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-cream);
+  transition: opacity 0.7s ease;
+}
+.preloader.is-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.preloader__mark {
+  display: block;
+  width: 420px;
+  height: 210px;
+  background-color: var(--color-espresso);
+  -webkit-mask: url(../img/logo-full.svg) center/contain no-repeat;
+  mask: url(../img/logo-full.svg) center/contain no-repeat;
+  animation: preloader-breathe 1.8s ease-in-out infinite;
+}
+@media (width <= 768.98px){
+  .preloader__mark {
+    width: 210px;
+    height: 105px;
+  }
+}
+@keyframes preloader-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}

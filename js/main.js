@@ -3,6 +3,29 @@
 
   const body = document.body;
 
+  // Preloader
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    const hidePreloader = () => {
+      preloader.classList.add('is-out');
+      preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+    };
+
+    const videoEl = document.querySelector('.hero__video');
+    const videoReady = videoEl
+      ? new Promise((resolve) => {
+          if (videoEl.readyState >= 1) { resolve(); return; }
+          videoEl.addEventListener('loadedmetadata', resolve, { once: true });
+        })
+      : Promise.resolve();
+
+    const timeout = new Promise((resolve) => setTimeout(resolve, 4000));
+    Promise.race([
+      Promise.all([document.fonts.ready, videoReady]),
+      timeout,
+    ]).then(() => requestAnimationFrame(hidePreloader));
+  }
+
   const FOCUSABLE_SELECTOR = [
     'a[href]',
     'button:not([disabled])',
