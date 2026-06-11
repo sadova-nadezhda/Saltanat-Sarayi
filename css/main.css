@@ -1139,7 +1139,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
     width: 100%;
     max-width: calc(100% - calc(32 * var(--width-multiplier)));
     padding: calc(4 * var(--width-multiplier)) calc(16 * var(--width-multiplier));
-    gap: calc(6 * var(--width-multiplier));
+    gap: calc(4 * var(--width-multiplier));
   }
   .venue__badge-orn{
     width: calc(24 * var(--width-multiplier));
