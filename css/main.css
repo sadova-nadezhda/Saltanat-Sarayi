@@ -229,6 +229,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   display: block;
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 
 .menu-active .burger{ visibility: hidden; }
@@ -270,6 +271,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   display: block;
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 
 .menu__ornament{
@@ -697,6 +699,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  user-select: none;
 }
 .why__text{
   margin-top: calc(24 * var(--width-multiplier));
@@ -717,9 +720,8 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
 .why__desc{
   margin: 0;
   font-family: var(--font-family-base);
-  font-weight: 400;
   font-size: calc(12 * var(--width-multiplier));
-  line-height: 1.3;
+  line-height: 1.2;
   text-align: center;
   color: var(--color-ink);
 }
@@ -762,6 +764,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  user-select: none;
 }
 .about__swiper .swiper-pagination,
 .gallery__swiper .swiper-pagination {
@@ -831,13 +834,13 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   --btn-fg: var(--color-cream);
   --btn-outline-fg: var(--color-ink);
 }
+
 .venue--night{
   --venue-bg: var(--color-dark);
   --venue-fg: var(--color-cream);
   --venue-line: rgba(254, 252, 243, .25);
   --venue-dot: rgba(254, 252, 243, .6);
   --venue-chip-border: rgba(255, 255, 255, .4);
-
   --badge-bg: var(--color-dark);
   --badge-fg: var(--color-cream);
   --badge-orn: var(--color-cream);
@@ -847,13 +850,13 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   --btn-fg: var(--color-dark);
   --btn-outline-fg: var(--color-cream);
 }
+
 .venue--terrace{
   --venue-bg: var(--color-beige);
   --venue-fg: var(--color-espresso);
   --venue-line: rgba(42, 26, 4, .2);
   --venue-dot: rgba(42, 26, 4, .45);
   --venue-chip-border: rgba(42, 26, 4, .3);
-
   --badge-bg: var(--color-beige);
   --badge-fg: var(--color-terracotta);
   --badge-orn: var(--color-terracotta);
@@ -863,8 +866,8 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   --btn-fg: var(--color-cream);
   --btn-outline-fg: var(--color-espresso);
 }
-.venue--catering{
 
+.venue--catering{
   --venue-bg: var(--color-mist);
   --venue-fg: var(--color-ink);
   --venue-title: var(--color-teal);
@@ -885,9 +888,9 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   flex: 0 0 50%;
   display: flex;
   align-items: center;
-
   padding: calc(56 * var(--width-multiplier)) calc(100 * var(--width-multiplier));
 }
+
 /* panels with accordions: top-align so opening/closing doesn't re-centre
    the whole block (otherwise the title jumps up/down) */
 .venue__panel:has(.venue__acc){ align-items: flex-start; }
@@ -895,33 +898,24 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   width: calc(520 * var(--width-multiplier));
   display: flex;
   flex-direction: column;
-
   gap: calc(20 * var(--width-multiplier));
 }
 
-.venue__title{
-  margin: 0;
-  font-family: var(--font-family-accent);
-  font-weight: 400;
-  font-size: calc(64 * var(--width-multiplier));
-  line-height: 1;
+.venue__title {
   color: var(--venue-title);
 }
-.venue__desc{
-  margin: 0;
-  font-family: var(--font-family-base);
-  font-weight: 300;
-  font-size: calc(16 * var(--width-multiplier));
 
-  line-height: 1.4;
+.venue__desc {
+  font-weight: 300;
+  line-height: 1.2;
   color: var(--venue-fg);
 }
 
 .venue__divider{
   height: 1px;
-
   background: var(--venue-line);
 }
+
 .venue__divider--dot{
   height: auto;
   background: none;
@@ -929,6 +923,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   align-items: center;
   gap: calc(12 * var(--width-multiplier));
 }
+
 .venue__divider--dot::before,
 .venue__divider--dot::after{
   content: "";
@@ -936,6 +931,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   height: 1px;
   background: var(--venue-line);
 }
+
 .venue__divider--dot span{
   position: static;
   transform: none;
@@ -949,16 +945,14 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
 .venue__label,
 .venue__note-label{
   margin: 0;
-  font-family: var(--font-family-base);
-  font-weight: 400;
   font-size: calc(12 * var(--width-multiplier));
   line-height: 1.4;
-  letter-spacing: calc(1 * var(--width-multiplier));
+  letter-spacing: 0.01;
   text-transform: uppercase;
   color: var(--venue-fg);
 }
 
-.venue__chips{
+.venue__chips {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -971,7 +965,6 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   border: 1px solid var(--venue-chip-border);
   border-radius: 9999px;
   padding: calc(6 * var(--width-multiplier)) calc(12 * var(--width-multiplier));
-  font-family: var(--font-family-base);
   font-weight: 300;
   font-size: calc(12 * var(--width-multiplier));
   line-height: 1.4;
@@ -979,16 +972,13 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   background: transparent;
 }
 
-.venue__acc-head{
+.venue__acc-head {
   list-style: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: calc(16 * var(--width-multiplier));
-  font-family: var(--font-family-base);
-  font-weight: 500;
-  font-size: calc(18 * var(--width-multiplier));
   color: var(--venue-fg);
 }
 .venue__acc-head::-webkit-details-marker{ display: none; }
@@ -1007,7 +997,6 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   list-style: none;
   margin: 0;
   padding: calc(16 * var(--width-multiplier)) 0 0;
-  font-family: var(--font-family-base);
   font-weight: 300;
   font-size: calc(12 * var(--width-multiplier));
   line-height: 1.4;
@@ -1024,9 +1013,10 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   left: 0;
 }
 .venue__acc-list--cols{
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: calc(24 * var(--width-multiplier));
+  column-gap: calc(24 * var(--width-multiplier)); */
+  columns: 2;
 }
 
 .venue__actions{
@@ -1045,6 +1035,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  user-select: none;
 }
 
 .venue__media::after{
@@ -1056,7 +1047,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   pointer-events: none;
 }
 
-.venue__badge{
+.venue__badge {
   position: absolute;
   z-index: 2;
   top: calc(240 * var(--width-multiplier));
@@ -1131,9 +1122,9 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
     gap: calc(16 * var(--width-multiplier));
   }
 
-  .venue__title{ font-size: calc(24 * var(--width-multiplier)); }
-  .venue__desc{  font-size: calc(14 * var(--width-multiplier)); }
-  .venue__acc-head{ font-size: calc(16 * var(--width-multiplier)); }
+  .venue__acc-list--cols {
+    columns: unset;
+  }
 
   .venue__actions{ flex-direction: column; }
   .venue .btn{ width: 100%; justify-content: center; }
@@ -1153,10 +1144,6 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   .venue__badge-orn{
     width: calc(38 * var(--width-multiplier));
     height: calc(38 * var(--width-multiplier));
-  }
-  .venue__badge-text{
-    font-size: calc(15 * var(--width-multiplier));
-    line-height: 1.3;
   }
   .venue__badge .venue__divider--dot{ gap: calc(8 * var(--width-multiplier)); }
 }
@@ -1196,6 +1183,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   width: 100%;
   height: 100%;
   object-fit: contain;
+  user-select: none;
 }
 .events__label{
   text-align: center;
@@ -1308,6 +1296,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   display: block;
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 
 .contacts__form-wrap{
@@ -1541,6 +1530,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   height: auto;
   width: calc(820 * var(--width-multiplier));
   transform: translate(-50%, -50%);
+  user-select: none;
 }
 /* one ornament, 3 times: centre upright, sides rotated 90deg (mirrored) and lower */
 .thx__ornament img:nth-child(1){ left: 20%; top: 60%; transform: translate(-50%, -50%) rotate(90deg); }
@@ -1564,6 +1554,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   width: 100%;
   height: 100%;
   object-fit: contain;
+  user-select: none;
 }
 .thx__title{
   margin: 0 0 calc(16 * var(--width-multiplier));
