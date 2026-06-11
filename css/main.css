@@ -144,7 +144,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   position: relative;
   z-index: 100;
   height: var(--header-height);
-  background: var(--color-cream);
+  background: transparent;
   color: var(--color-text);
   transition: background-color var(--transition), color var(--transition);
 }
@@ -1504,6 +1504,12 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   }
 }
 
+.page-thx {
+  position: relative;
+  isolation: isolate;
+  background: url(../img/thx-back.png) center / cover no-repeat;
+}
+
 .thx{
   position: relative;
   isolation: isolate;
@@ -1512,30 +1518,9 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   align-items: center;
   justify-content: center;
   padding: calc(80 * var(--width-multiplier)) var(--container-padding-x);
-  background: var(--color-cream);
   overflow: hidden;
 }
-.thx__ornament{
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-  opacity: .22;
-}
-.thx__ornament img{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: auto;
-  width: calc(820 * var(--width-multiplier));
-  transform: translate(-50%, -50%);
-  user-select: none;
-}
-/* one ornament, 3 times: centre upright, sides rotated 90deg (mirrored) and lower */
-.thx__ornament img:nth-child(1){ left: 20%; top: 60%; transform: translate(-50%, -50%) rotate(90deg); }
-.thx__ornament img:nth-child(2){ left: 50%; top: 46%; }
-.thx__ornament img:nth-child(3){ left: 80%; top: 60%; transform: translate(-50%, -50%) rotate(-90deg); }
+
 .thx__inner{
   display: flex;
   flex-direction: column;
