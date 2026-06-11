@@ -635,7 +635,10 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   .hero__title {
     align-self: stretch;
     max-width: unset;
-    font-size: calc(22 * var(--width-multiplier));
+    font-size: calc(28 * var(--width-multiplier));
+  }
+  .hero__title br {
+    display: none;
   }
   .hero__actions{
     width: 100%;
@@ -1133,13 +1136,17 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
     left: 50%;
     right: auto;
     transform: translateX(-50%);
-    width: calc(241 * var(--width-multiplier));
-    padding: calc(14 * var(--width-multiplier)) calc(20 * var(--width-multiplier));
+    width: 100%;
+    max-width: calc(100% - calc(64 * var(--width-multiplier)));
+    padding: calc(12 * var(--width-multiplier)) calc(20 * var(--width-multiplier));
     gap: calc(6 * var(--width-multiplier));
   }
   .venue__badge-orn{
-    width: calc(38 * var(--width-multiplier));
-    height: calc(38 * var(--width-multiplier));
+    width: calc(24 * var(--width-multiplier));
+    height: calc(24 * var(--width-multiplier));
+  }
+  .venue__badge-text {
+    font-size: calc(16 * var(--width-multiplier));
   }
   .venue__badge .venue__divider--dot{ gap: calc(8 * var(--width-multiplier)); }
 }
@@ -1365,7 +1372,6 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
 .contacts__form {
   display: flex;
   flex-direction: column;
-
   gap: calc(16 * var(--width-multiplier));
 }
 .contacts__field {
@@ -1374,9 +1380,9 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   padding: 0 calc(16 * var(--width-multiplier));
   border: 1px solid rgba(24, 24, 24, .2);
   border-radius: 0;
-  font-size: calc(14 * var(--width-multiplier));
   color: var(--color-ink);
   background: var(--color-cream);
+  font-size: calc(16 * var(--width-multiplier));
 }
 .contacts__field::placeholder{
   color: rgba(24, 24, 24, .4);
@@ -1430,7 +1436,6 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
     width: 100%;
     flex-direction: column;
     gap: calc(40 * var(--width-multiplier));
-    padding: 0 calc(16 * var(--width-multiplier));
   }
   .contacts__info,
   .contacts__form-wrap{ width: 100%; margin-top: 0; }
@@ -1464,7 +1469,6 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   .contacts__field{ height: calc(42 * var(--width-multiplier)); }
   .contacts__findus{
     width: 100%;
-    padding: 0 calc(16 * var(--width-multiplier));
     margin-top: calc(48 * var(--width-multiplier));
   }
   .contacts__map img,
@@ -1656,8 +1660,8 @@ html:not(.no-js) [data-reveal-group].is-revealed > *{
 }
 @media (width <= 768.98px){
   .preloader__mark {
-    width: 210px;
-    height: 105px;
+    width: 280px;
+    height: 140px;
   }
 }
 @keyframes preloader-breathe {
