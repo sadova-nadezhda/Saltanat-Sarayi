@@ -1660,8 +1660,8 @@ html:not(.no-js) [data-reveal-group].is-revealed > *{
 }
 @media (width <= 768.98px){
   .preloader__mark {
-    width: 280px;
-    height: 140px;
+    width: 220px;
+    height: 110px;
   }
 }
 @keyframes preloader-breathe {
