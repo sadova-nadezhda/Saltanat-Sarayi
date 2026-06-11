@@ -1137,8 +1137,8 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
     right: auto;
     transform: translateX(-50%);
     width: 100%;
-    max-width: calc(100% - calc(64 * var(--width-multiplier)));
-    padding: calc(12 * var(--width-multiplier)) calc(20 * var(--width-multiplier));
+    max-width: calc(100% - calc(32 * var(--width-multiplier)));
+    padding: calc(4 * var(--width-multiplier)) calc(16 * var(--width-multiplier));
     gap: calc(6 * var(--width-multiplier));
   }
   .venue__badge-orn{
@@ -1146,7 +1146,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
     height: calc(24 * var(--width-multiplier));
   }
   .venue__badge-text {
-    font-size: calc(16 * var(--width-multiplier));
+    font-size: calc(14 * var(--width-multiplier));
   }
   .venue__badge .venue__divider--dot{ gap: calc(8 * var(--width-multiplier)); }
 }
