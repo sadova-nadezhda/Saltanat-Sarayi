@@ -406,9 +406,6 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   .footer__container{ grid-template-columns: 1fr 1fr; }
 }
 @media (width <= 768.98px){
-  .footer{
-    padding-top: calc(40 * var(--width-multiplier));
-  }
   .footer__container{
     grid-template-columns: 1fr;
     gap: calc(24 * var(--width-multiplier));
