@@ -885,7 +885,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   flex: 0 0 50%;
   display: flex;
   align-items: center;
-  padding: calc(56 * var(--width-multiplier)) calc(100 * var(--width-multiplier));
+  padding: calc(100 * var(--width-multiplier));
 }
 
 /* panels with accordions: top-align so opening/closing doesn't re-centre
@@ -1010,10 +1010,9 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   left: 0;
 }
 .venue__acc-list--cols{
-  /* display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: calc(24 * var(--width-multiplier)); */
-  columns: 2;
+  column-gap: calc(24 * var(--width-multiplier));
 }
 
 .venue__actions{
@@ -1120,7 +1119,7 @@ h4      { font-size: calc(24 * var(--width-multiplier)); }
   }
 
   .venue__acc-list--cols {
-    columns: unset;
+    grid-template-columns: 1fr;
   }
 
   .venue__actions{ flex-direction: column; }

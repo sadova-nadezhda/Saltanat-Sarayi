@@ -340,43 +340,63 @@
     });
   }
 
-  document.querySelectorAll('details.venue__acc').forEach((d) => {
-    const summary = d.querySelector('summary');
-    const content = d.querySelector('.venue__acc-list');
-    if (!summary || !content) return;
+  const DUR = 380;
+  const EASING = 'cubic-bezier(.22,.61,.36,1)';
 
-    const DUR = 380;
-    let anim = null;
+  function animateClose(item) {
+    const fullH = item.content.scrollHeight;
+    item.content.style.overflow = 'hidden';
+    item.anim = item.content.animate(
+      [{ height: fullH + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
+      { duration: DUR, easing: EASING, fill: 'forwards' }
+    );
+    item.anim.onfinish = () => {
+      item.d.open = false;
+      item.anim.cancel();
+      item.content.style.overflow = '';
+      item.anim = null;
+    };
+  }
 
-    summary.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (anim) {
-        anim.cancel();
-        anim = null;
-      }
+  function closeItem(item) {
+    if (!item.d.open) return;
+    if (item.anim) { item.anim.cancel(); item.anim = null; }
+    animateClose(item);
+  }
 
-      const isOpen = d.open;
-      if (!isOpen) d.open = true;
+  document.querySelectorAll('.venue__panel').forEach((panel) => {
+    const accItems = Array.from(panel.querySelectorAll('details.venue__acc')).map((d) => {
+      const summary = d.querySelector('summary');
+      const content = d.querySelector('.venue__acc-list');
+      return { d, summary, content, anim: null };
+    }).filter(({ summary, content }) => summary && content);
 
-      const fullH = content.scrollHeight;
-      const fromH = isOpen ? fullH : 0;
-      const toH   = isOpen ? 0 : fullH;
+    accItems.forEach((item) => {
+      item.summary.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (item.anim) { item.anim.cancel(); item.anim = null; }
 
-      content.style.overflow = 'hidden';
+        const isOpen = item.d.open;
 
-      anim = content.animate(
-        [
-          { height: fromH + 'px', opacity: isOpen ? 1 : 0 },
-          { height: toH   + 'px', opacity: isOpen ? 0 : 1 },
-        ],
-        { duration: DUR, easing: 'cubic-bezier(.22,.61,.36,1)' }
-      );
+        if (isOpen) {
+          animateClose(item);
+          return;
+        }
 
-      anim.onfinish = () => {
-        content.style.overflow = '';
-        if (isOpen) d.open = false;
-        anim = null;
-      };
+        accItems.forEach((other) => { if (other !== item) closeItem(other); });
+        item.d.open = true;
+
+        const fullH = item.content.scrollHeight;
+        item.content.style.overflow = 'hidden';
+        item.anim = item.content.animate(
+          [{ height: '0px', opacity: 0 }, { height: fullH + 'px', opacity: 1 }],
+          { duration: DUR, easing: EASING }
+        );
+        item.anim.onfinish = () => {
+          item.content.style.overflow = '';
+          item.anim = null;
+        };
+      });
     });
   });
 
